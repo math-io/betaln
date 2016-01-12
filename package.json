@@ -45,6 +45,7 @@
   },
   "dependencies": {
     "compute-polynomial": "^1.1.0",
+    "gamma": "^1.0.0",
     "math-floor": "^1.0.0",
     "math-ln": "^1.0.0",
     "math-tan": "^1.0.0",
