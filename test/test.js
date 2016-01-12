@@ -50,6 +50,14 @@ test( 'the function returns `NaN` if provided negative values', function test( t
 	t.end();
 });
 
+test( 'the function returns +Infinity if at least one argument is zero', function test( t ) {
+	var val = betaln( 0, 2 );
+	t.ok( !isfinite( val ), 'returns +Infinity' );
+	val = betaln( 1, 0 );
+	t.ok( !isfinite( val ), 'returns +Infinity' );
+	t.end();
+});
+
 test( 'the function evaluates the logarithm of the beta function', function test( t ) {
 	var actual;
 	var b1;
