@@ -2,7 +2,7 @@
 
 // MODULES //
 
-var test = require( 'tape' );
+var tape = require( 'tape' );
 var isfinite = require( 'validate.io-finite' );
 var isnan = require( 'validate.io-nan' );
 var abs = require( 'math-abs' );
@@ -29,12 +29,12 @@ for ( i = 0; i < expected.length; i++ ) {
 
 // TESTS //
 
-test( 'main export is a function', function test( t ) {
+tape( 'main export is a function', function test( t ) {
 	t.ok( typeof betaln === 'function', 'main export is a function' );
 	t.end();
 });
 
-test( 'the function returns `NaN` if provided a `NaN`', function test( t ) {
+tape( 'the function returns `NaN` if provided a `NaN`', function test( t ) {
 	var val = betaln( NaN, 2 );
 	t.notOk( val === val, 'returns NaN' );
 	val = betaln( 2, NaN );
@@ -42,7 +42,7 @@ test( 'the function returns `NaN` if provided a `NaN`', function test( t ) {
 	t.end();
 });
 
-test( 'the function returns `NaN` if provided negative values', function test( t ) {
+tape( 'the function returns `NaN` if provided negative values', function test( t ) {
 	var val = betaln( -2, 5 );
 	t.notOk( val === val, 'returns NaN' );
 	val = betaln( 4, -3 );
@@ -50,7 +50,7 @@ test( 'the function returns `NaN` if provided negative values', function test( t
 	t.end();
 });
 
-test( 'the function returns +Infinity if at least one argument is zero', function test( t ) {
+tape( 'the function returns +Infinity if at least one argument is zero', function test( t ) {
 	var val = betaln( 0, 2 );
 	t.ok( !isfinite( val ), 'returns +Infinity' );
 	val = betaln( 1, 0 );
@@ -58,7 +58,7 @@ test( 'the function returns +Infinity if at least one argument is zero', functio
 	t.end();
 });
 
-test( 'the function evaluates the logarithm of the beta function', function test( t ) {
+tape( 'the function evaluates the logarithm of the beta function', function test( t ) {
 	var actual;
 	var b1;
 	var b2;
