@@ -11,7 +11,7 @@ This function evaluates the natural logarithm of the [Beta function][beta-functi
 	<br>
 </div>
 
-In here, Γ denotes the [Gamma function][gamma-function].
+In here, `Γ` denotes the [Gamma function][gamma-function].
 
 ## Installation
 
