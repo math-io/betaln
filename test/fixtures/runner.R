@@ -1,8 +1,8 @@
 options( digits = 16 );
 library( jsonlite );
 
-a = seq( 0.05, 100, 0.05 )
-b = seq( 0.05, 100, 0.05 )
+a = seq( 0.05, 1000, 0.05 )
+b = seq( 0.05, 1000, 0.05 )
 y = lbeta( a, b )
 
 cat( y, sep = ",\n" )

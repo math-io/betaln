@@ -59,23 +59,15 @@ tape( 'the function returns `+Infinity` if at least one argument is `0`', functi
 });
 
 tape( 'the function evaluates the logarithm of the beta function', function test( t ) {
-	var actual;
-	var b1;
-	var b2;
+	var delta;
+	var tol;
+	var v;
 	var i;
 	for ( i = 0; i < arg1.length; i++ ) {
-		actual =  betaln( arg1[ i ], arg2[ i ] );
-
-		b1 = isfinite( actual );
-		b2 = isfinite( expected[ i ] );
-		t.equal( b1, b2, 'returned result is ' + ( (b2) ? 'finite' : 'not finite' ) );
-
-		b1 = isnan( actual );
-		b2 = isnan( expected[ i ] );
-		t.equal( b1, b2, 'returned result is ' + ( (b1) ? '' : 'not' ) + ' NaN' );
-		if ( !b1 ) {
-			t.ok( abs( actual - expected[ i ] ) < 1e-12, 'returned result is within tolerance. actual: ' + actual + '; expected: ' + expected[ i ] + '.' );
-		}
+		v =  betaln( arg1[ i ], arg2[ i ] );
+		delta = abs( v - expected[ i ] );
+		tol = 1e-12 * Math.max( 1, abs( v ), abs( expected[ i ] ) );
+		t.ok( delta <= tol, 'within tolerance. x: ' + arg1[ i ] + '. y = ' + arg2[ i ] + '. Value: ' + v + '. Expected: ' + expected[ i ] + '. Tolerance: ' + tol + '.' );
 	}
 	t.end();
 });
