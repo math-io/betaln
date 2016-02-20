@@ -4,7 +4,7 @@ betaln
 
 > Natural logarithm of the [Beta function][beta-function].
 
-This function evaluates the natural logarithm of the [Beta function][beta-function], defined as follows:
+This function evaluates the natural logarithm of the [Beta function][beta-function], which can be represented as follows:
 
 <div class="equation" align="center" data-raw-text="\ln \operatorname{Beta}(x,y)= \ln \Gamma(x) + \ln \Gamma(y) - \ln \Gamma(x+y)" data-equation="eq:betaln_function">
 	<img src="https://cdn.rawgit.com/math-io/betaln/0d5d2e629892e3957f32ffc865263fbe3ba019ec/docs/img/eqn.svg" alt="Natural logarithm of the beta function.">
