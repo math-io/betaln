@@ -50,7 +50,7 @@ tape( 'the function returns `NaN` if provided negative values', function test( t
 	t.end();
 });
 
-tape( 'the function returns +Infinity if at least one argument is zero', function test( t ) {
+tape( 'the function returns `+Infinity` if at least one argument is `0`', function test( t ) {
 	var val = betaln( 0, 2 );
 	t.ok( !isfinite( val ), 'returns +Infinity' );
 	val = betaln( 1, 0 );
@@ -74,7 +74,7 @@ tape( 'the function evaluates the logarithm of the beta function', function test
 		b2 = isnan( expected[ i ] );
 		t.equal( b1, b2, 'returned result is ' + ( (b1) ? '' : 'not' ) + ' NaN' );
 		if ( !b1 ) {
-			t.ok( abs( actual - expected[ i ] ) < 1e-14, 'returned result is within tolerance. actual: ' + actual + '; expected: ' + expected[ i ] + '.' );
+			t.ok( abs( actual - expected[ i ] ) < 1e-12, 'returned result is within tolerance. actual: ' + actual + '; expected: ' + expected[ i ] + '.' );
 		}
 	}
 	t.end();
