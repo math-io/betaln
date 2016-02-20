@@ -3,6 +3,9 @@ node_js:
   - 'stable'
   - '5'
   - '4'
+  - '3'
+  - '2'
+  - '1'
   - '0.12'
   - '0.10'
   - 'iojs'
@@ -10,4 +13,3 @@ before_install:
   - npm update -g npm
 after_script:
   - npm run coverage
-
